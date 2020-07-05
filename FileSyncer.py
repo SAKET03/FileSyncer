@@ -19,8 +19,8 @@ print(diff)
 if len(diff) != 0:
     for path in diff:
         os.remove(path)
-else:
-    for folders, subfolders, filenames in os.walk(source):
-        for filename in filenames:
-            if filename.endswith("{}".format(extension)):
-                shutil.copy(os.path.join(folders, filename), destination)
+
+for folders, subfolders, filenames in os.walk(source):
+    for filename in filenames:
+        if filename.endswith("{}".format(extension)):
+            shutil.copy(os.path.join(folders, filename), destination)
