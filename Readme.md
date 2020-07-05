@@ -6,8 +6,7 @@ This Python program takes the input for:
 3. **Format** of the file's which need to be copied.
 
 ### More to Come
-1. Simultaneous file syncing
-2. Multiple Format Input
-3. Multiple Folder Tree Configuration
-4. Config Files
-5. Requirment.txt
+1. Multiple Format Input
+2. Multiple Folder Tree Configuration
+3. Config Files
+4. Requirment.txt
