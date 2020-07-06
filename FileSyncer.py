@@ -1,10 +1,20 @@
 import os
 import shutil
 from filecmp import dircmp
+from configparser import ConfigParser
 
-source: str = input("Enter Source Path : ")
-destination: str = input("Enter Destination Path : ")
-extension: str = input("Enter File Format : ")
+if os.path.exists("Config.ini"):
+    config = ConfigParser()
+    config.read("Config.ini")
+    source = config["DEFAULT"]["source"]
+    destination = config["DEFAULT"]["destination"]
+    extension = config["DEFAULT"]["extension"]
+
+else:
+    source: str = input("Enter Source Path : ")
+    destination: str = input("Enter Destination Path : ")
+    extension: str = input("Enter File Format : ")
+
 
 result = dircmp(source, destination)
 var1 = result.left_list
@@ -23,4 +33,4 @@ if len(diff) != 0:
 for folders, subfolders, filenames in os.walk(source):
     for filename in filenames:
         if filename.endswith("{}".format(extension)):
-            shutil.copytree(os.path.join(folders, filename), destination)
+            shutil.copy(os.path.join(folders, filename), destination)
