@@ -1,7 +1,7 @@
 import os
 import shutil
-from filecmp import dircmp
 from configparser import ConfigParser
+from filecmp import dircmp
 
 if os.path.exists("Config.ini"):
     config = ConfigParser()
